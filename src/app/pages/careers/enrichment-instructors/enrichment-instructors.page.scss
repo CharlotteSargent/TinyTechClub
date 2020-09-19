@@ -1,0 +1,62 @@
+#content {
+    position: relative;
+    margin-top: 152px;
+    width: 100%;
+    height: auto;
+    overflow-y: auto;
+}
+
+.text h1,
+.text h2,
+.text h3,
+.text p,
+.text ul,
+.text li {
+    margin: 0;
+    padding: 0;
+}
+
+.text{
+    margin: 100px 128px 0px 230px;
+    margin-bottom: 100px;
+    padding: 0;
+}
+.text h1 {
+    font-family: 'Poppins';
+    font-weight: bold;
+    font-size: 36px;
+}
+.text h2 {
+    font-family: 'Poppins';
+    font-weight: bold;
+    font-size: 24px;
+}
+.text p,
+.text h3 {
+    font-family: 'Poppins';
+    font-size: 17px;
+}
+
+.text li {
+    font-family: 'Poppins';
+    font-size: 15px;
+}
+
+.location{
+    margin-left: 17px;
+}
+
+.location ul {
+    margin-left: 17px;
+}
+​
+​
+.TFSpace {
+    height: 25px;
+    padding: 0;
+    margin: 0;
+}
+
+.HoursSpace{
+    height: 25px;
+}

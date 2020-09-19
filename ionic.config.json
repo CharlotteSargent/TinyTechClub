@@ -1,0 +1,7 @@
+{
+  "name": "TinyTechClub",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
