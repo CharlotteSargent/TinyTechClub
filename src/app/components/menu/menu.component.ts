@@ -29,7 +29,7 @@ export class MenuComponent implements OnInit {
     menu = {
       name: 'Outreach',
       path: 'outreach',
-      isSelected: true
+      isSelected: false
     };
     this.menuList.push(menu);
     menu = {
@@ -44,13 +44,26 @@ export class MenuComponent implements OnInit {
       isSelected: false
     };
     this.menuList.push(menu);
+
+    // select the active menu
+    setTimeout(() => {
+      let activePath = this.router.url;
+      const pathList: string[] = activePath.split(`/`);
+
+      if (pathList && pathList.length > 1) {
+        activePath = pathList[1];
+        const index = this.menuList.findIndex(d => d.path === activePath);
+        if (index > -1) {
+          this.menuList[index].isSelected = true;
+        }
+      }
+    }, 1500);
   }
 
   menuSelected(index: number) {
     this.menuList.forEach(d => d.isSelected = false);
     this.menuList[index].isSelected = true;
-    var x = this.menuList[index].path;
-    this.router.navigateByUrl('/'+x);
+    this.router.navigateByUrl(this.menuList[index].path);
   }
 
 }
