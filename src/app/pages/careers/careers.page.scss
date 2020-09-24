@@ -107,6 +107,15 @@
     color: var(--ion-color-TTCYellow);
     cursor: pointer;
 }
+.list-left-div:hover{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 36px;
+    color: #000000;
+    cursor: pointer;
+}
 .list-right-div{
     position: absolute;
     right: 0;

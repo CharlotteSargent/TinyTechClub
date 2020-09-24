@@ -7,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  headerClicked = false;
+
   constructor() { }
 
   ngOnInit() {}
+
+  headerClickedAction() {
+    this.headerClicked = true;
+  }
 
 }
