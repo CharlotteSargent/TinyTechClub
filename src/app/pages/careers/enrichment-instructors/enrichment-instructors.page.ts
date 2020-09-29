@@ -9,7 +9,7 @@ import { CommunityPartner } from 'src/app/models/communityPartner.model';
 })
 export class EnrichmentInstructorsPage implements OnInit {
 ​
-  communityPartnerForm: FormGroup;
+  enrichmentInstructorForm: FormGroup;
   private formSubmitAttempt: boolean;
   validationMessages = {
     firstName: [
@@ -34,7 +34,7 @@ export class EnrichmentInstructorsPage implements OnInit {
   constructor(private formBuilder: FormBuilder) { }
 ​
   ngOnInit() {
-    this.communityPartnerForm = this.formBuilder.group({
+    this.enrichmentInstructorForm = this.formBuilder.group({
       firstName: new FormControl('', Validators.required),
       lastName: new FormControl('', Validators.required),
       email: new FormControl('', Validators.compose([
@@ -64,10 +64,10 @@ export class EnrichmentInstructorsPage implements OnInit {
   }
 ​
   submit() {
-    if (this.communityPartnerForm.valid) {
+    if (this.enrichmentInstructorForm.valid) {
       console.log('form submitted');
     } else {
-      this.validateAllFormFields(this.communityPartnerForm);
+      this.validateAllFormFields(this.enrichmentInstructorForm);
     }
   }
 ​
