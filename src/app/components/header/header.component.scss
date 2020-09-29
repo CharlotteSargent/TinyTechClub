@@ -1,3 +1,4 @@
+@import 'src/theme/font.scss'; 
 .header {
     height: 50px;
     width: 100%;
@@ -24,9 +25,7 @@
 
     /* 14pt Field Text */
 
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: normal;
+    font-family: "Poppins Regular";
     font-size: 14px;
     line-height: 21px;
     text-align: center;

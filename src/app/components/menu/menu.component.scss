@@ -1,3 +1,4 @@
+@import 'src/theme/font.scss'; 
 .menu {
     top: 50px;
     height: 102px;
@@ -33,9 +34,7 @@
     right: 15%;
     top: 35.59%;
     bottom: 49.55%;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: normal;
+    font-family: "Poppins Regular";
     font-size: 18px;
     line-height: 27px;
     text-align: center;
