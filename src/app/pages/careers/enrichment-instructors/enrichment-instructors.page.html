@@ -96,36 +96,52 @@
                     <div class="form-div-1-inner-body1">
                         <div class="group-107">
                             <div class="label-div">
-                                <p>First Name <span class="mandatory-field">*</span></p>
+                                <p>First Name <span class="required-star">*</span>
+                                    <ng-container *ngFor="let validation of validationMessages.firstName">
+                                        <span class="error-message" *ngIf="enrichmentInstructorForm.get('firstName').hasError(validation.type) && (enrichmentInstructorForm.get('firstName').dirty || enrichmentInstructorForm.get('firstName').touched)">{{ validation.message }}</span>
+                                    </ng-container>
+                                </p>
                             </div>
                             <div class="input-div">
-                                <input type="text" class="input">
+                                <input type="text" formControlName="firstName" class="input" [ngClass]="{'error-border-class': enrichmentInstructorForm.get('firstName').hasError('required') && (enrichmentInstructorForm.get('firstName').dirty || enrichmentInstructorForm.get('firstName').touched)}">
                             </div>
                         </div>
                         <div class="group-106">
                             <div class="label-div">
-                                <p>Last Name <span class="mandatory-field">*</span></p>
+                                <p>Last Name <span class="required-star">*</span>
+                                    <ng-container *ngFor="let validation of validationMessages.lastName">
+                                        <span class="error-message" *ngIf="enrichmentInstructorForm.get('lastName').hasError(validation.type) && (enrichmentInstructorForm.get('lastName').dirty || enrichmentInstructorForm.get('lastName').touched)">{{ validation.message }}</span>
+                                    </ng-container>
+                                </p>
                             </div>
                             <div class="input-div">
-                                <input type="text" class="input">
+                                <input type="text" class="input" formControlName="lastName" [ngClass]="{'error-border-class': enrichmentInstructorForm.get('lastName').hasError('required') && (enrichmentInstructorForm.get('lastName').dirty || enrichmentInstructorForm.get('lastName').touched)}">
                             </div>
                         </div>
                     </div>
                     <div class="form-div-1-inner-body2">
                         <div class="group-107">
                             <div class="label-div">
-                                <p>Email <span class="mandatory-field">*</span></p>
+                                <p>Email <span class="required-star">*</span>
+                                    <ng-container *ngFor="let validation of validationMessages.email">
+                                        <span class="error-message" *ngIf="enrichmentInstructorForm.get('email').hasError(validation.type) && (enrichmentInstructorForm.get('email').dirty || enrichmentInstructorForm.get('email').touched)">{{ validation.message }}</span>
+                                    </ng-container>
+                                </p>
                             </div>
                             <div class="input-div">
-                                <input type="text" class="input">
+                                <input type="text" class="input" formControlName="email" [ngClass]="{'error-border-class': (enrichmentInstructorForm.get('email').hasError('required') || enrichmentInstructorForm.get('email').hasError('pattern')) && (enrichmentInstructorForm.get('email').dirty || enrichmentInstructorForm.get('email').touched)}">
                             </div>
                         </div>
                         <div class="group-106">
                             <div class="label-div">
-                                <p>Phone <span class="mandatory-field">*</span></p>
+                                <p>Phone <span class="required-star">*</span>
+                                    <ng-container *ngFor="let validation of validationMessages.phone">
+                                        <span class="error-message" *ngIf="enrichmentInstructorForm.get('phone').hasError(validation.type) && (enrichmentInstructorForm.get('phone').dirty || enrichmentInstructorForm.get('phone').touched)">{{ validation.message }}</span>
+                                    </ng-container>
+                                </p>
                             </div>
                             <div class="input-div">
-                                <input type="text" class="input">
+                                <input type="text" class="input" formControlName="phone" [ngClass]="{'error-border-class': (enrichmentInstructorForm.get('phone').hasError('required') || enrichmentInstructorForm.get('phone').hasError('pattern')) && (enrichmentInstructorForm.get('phone').dirty || enrichmentInstructorForm.get('phone').touched)}">
                             </div>
                         </div>
                     </div>
@@ -140,7 +156,7 @@
                                 <p>LinkedIn Profile</p>
                             </div>
                             <div class="input-div input-div2">
-                                <input type="text" class="input">
+                                <input type="text" class="input" formControlName="linkedIn">
                             </div>
                         </div>
                         <div class="group-106">
@@ -148,7 +164,7 @@
                                 <p>Portfolio or examples of work</p>
                             </div>
                             <div class="input-div input-div2">
-                                <input type="text" class="input">
+                                <input type="text" class="input" formControlName="workExperience">
                             </div>
                         </div>
                     </div>
@@ -157,15 +173,21 @@
                             <div class="label-div">
                                 <p>Work Authorization</p>
                             </div>
-                            <div class="input-div input-div2">
-                                <select id="country" name="country">
-                                    <option value="" disabled selected hidden>Please select</option>
-                                    <option value="opt1">Can work for any employer</option>
-                                    <option value="opt2">Requires work visa</option>
-                                    <option value="opt3">On student visa</option>
-                                    <option value="opt4">Not specified</option>
-                                </select>
-                            </div>
+                                <div class="custom-select-wrapper">
+                                    <div class="custom-select">
+                                        <div class="custom-select__trigger"><span>Please select</span>
+                                            <div class="arrow"><ion-icon name="chevron-down-outline"></ion-icon></div>
+                                            <!-- <div class="arrow"></div> -->
+                                        </div>
+                                        <div class="custom-options">
+                                            <span class="custom-option selected" data-value="cwae"><span class="options">Can work for any employer</span></span>
+                                            <span class="custom-option" data-value="rwv"><span class="options">Requires work visa</span></span>
+                                            <span class="custom-option" data-value="osv"><span class="options">On student visa</span></span>
+                                            <span class="custom-option" data-value="ns"><span class="options">Not specified</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
                         </div>
                     </div>
                     
@@ -173,163 +195,6 @@
             </div>
             <button type="submit" class="submit-button">Submit</button>
         </form>    
-            
-            <!--
-                <hr class="solid">
-                <br/><br/>
-                <ion-row>
-                    <ion-col>
-​
-                            <ng-container *ngFor="let validation of validationMessages.firstName">
-                                <div class="error-message"
-                                    *ngIf="communityPartnerForm.get('firstName').hasError(validation.type) && (communityPartnerForm.get('firstName').dirty || communityPartnerForm.get('firstName').touched)">
-                                    {{ validation.message }}
-                                </div>
-                            </ng-container>
-​
-                    </ion-col>
-                    <ion-col>
-​
-                            <ng-container *ngFor="let validation of validationMessages.lastName">
-                                <div class="error-message"
-                                    *ngIf="communityPartnerForm.get('lastName').hasError(validation.type) && (communityPartnerForm.get('lastName').dirty || communityPartnerForm.get('lastName').touched)">
-                                    {{ validation.message }}
-                                </div>
-                            </ng-container>
-          
-                    </ion-col>
-                </ion-row>
-                <ion-row>
-                    <ion-col>
-                        <div class="form-label-div">
-                            First Name
-                            <span class="required-star">*</span>
-                        </div>
-                    </ion-col>
-                    <ion-col>
-                        <div class="form-label-div">
-                            Last Name
-                            <span class="required-star">*</span>
-                        </div>
-                    </ion-col>
-                </ion-row>
-                <ion-row>
-                    <ion-col>
-                        <div class="input-text-field">
-                            <input type="text" formControlName="firstName" class="input-type-text" [ngClass]="{'error-border-class': communityPartnerForm.get('firstName').hasError('required') && (communityPartnerForm.get('firstName').dirty || communityPartnerForm.get('firstName').touched)}">
-                        </div>
-                    </ion-col>
-                    <ion-col>
-                        <div class="input-text-field">
-                            <input type="text" formControlName="lastName" class="input-type-text" [ngClass]="{'error-border-class': communityPartnerForm.get('lastName').hasError('required') && (communityPartnerForm.get('lastName').dirty || communityPartnerForm.get('lastName').touched)}">
-                        </div>
-                    </ion-col>
-                </ion-row>
-                <ion-row>
-                    <ion-col>
-                        <ng-container *ngFor="let validation of validationMessages.email">
-                            <div class="error-message"
-                                *ngIf="communityPartnerForm.get('email').hasError(validation.type) && (communityPartnerForm.get('email').dirty || communityPartnerForm.get('email').touched)">
-                                {{ validation.message }}
-                            </div>
-                        </ng-container>
-                    </ion-col>
-                    <ion-col>
-                        <ng-container *ngFor="let validation of validationMessages.phone">
-                            <div class="error-message"
-                                *ngIf="communityPartnerForm.get('phone').hasError(validation.type) && (communityPartnerForm.get('phone').dirty || communityPartnerForm.get('phone').touched)">
-                                {{ validation.message }}
-                            </div>
-                        </ng-container>
-                    </ion-col>
-                </ion-row>
-                <br/><br/>
-                <ion-row>
-                    <ion-col>
-                        <div class="form-label-div">
-                            Email
-                            <span class="required-star">*</span>
-                        </div>
-                    </ion-col>
-                    <ion-col>
-                        <div class="form-label-div">
-                            Phone
-                            <span class="required-star">*</span>
-                        </div>
-                    </ion-col>
-                </ion-row>
-                <ion-row>
-                    <ion-col>
-                        <div class="input-text-field">
-                            <input type="text" formControlName="email" class="input-type-text" [ngClass]="{'error-border-class': (communityPartnerForm.get('email').hasError('required') || communityPartnerForm.get('email').hasError('pattern')) && (communityPartnerForm.get('email').dirty || communityPartnerForm.get('email').touched)}">
-                        </div>
-                    </ion-col>
-                    <ion-col>
-                        <div class="input-text-field">
-                            <input type="text" formControlName="phone" class="input-type-text" [ngClass]="{'error-border-class': (communityPartnerForm.get('phone').hasError('required') || communityPartnerForm.get('phone').hasError('pattern')) && (communityPartnerForm.get('phone').dirty || communityPartnerForm.get('phone').touched)}">
-                        </div>
-                    </ion-col>
-                </ion-row>
-                <br/><br/><br/>
-                <hr class="solid">
-                <br/><br/><br/>
-                <ion-row>
-                    <ion-col>
-                        <div class="form-label-div">
-                            Linkedin Profile
-                        </div>
-                    </ion-col>
-                    <ion-col>
-                        <div class="form-label-div">
-                            Portfolio or examples of work
-                        </div>
-                    </ion-col>
-                </ion-row>
-                
-                <ion-row>
-                    <ion-col>
-                        <div class="input-text-field">
-                            <input type="text" formControlName="linkdin" class="input-type-text">
-                        </div>
-                    </ion-col>
-                    <ion-col>
-                        <div class="input-text-field">
-                            <input type="text" formControlName="workexp" class="input-type-text">
-                        </div>
-                    </ion-col>
-                </ion-row>
-                <br/><br/><br/>
-                <ion-row>
-                    <ion-col>
-                        <div class="form-label-div">
-                            Work Authorization
-                        </div>
-                    </ion-col>
-                    <ion-col></ion-col>
-                </ion-row>
-                <ion-row>
-                    <ion-col>
-                        <select class="opts" id="country" name="country">
-                            <option value="" disabled selected hidden>Choose An Option</option>
-                            <option value="opt1">Can work for any employer</option>
-                            <option value="opt2">Requires work visa</option>
-                            <option value="opt3">On student visa</option>
-                            <option value="opt4">Not specified</option>
-                        </select>
-                    </ion-col>
-                    <ion-col>
-​
-                    </ion-col>
-                </ion-row>
-                <br/><br/><br/>
-                <hr class="solid">
-                <ion-row>
-                    <ion-col><button type="submit" class="submit-button">Submit</button></ion-col>
-                    <ion-col></ion-col>
-                </ion-row>
-                <br/><br/><br/>
-            </ion-grid>
-         -->
       </div>
     </div>
     <app-footer></app-footer>

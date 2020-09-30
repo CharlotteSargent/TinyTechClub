@@ -1,11 +1,13 @@
 <div class="menu">
+  <div class="menu-content">
     <div class="logo">
-      <img src="assets/images/Logo.png" alt="">
+      <img src="assets/images/Logo.png" alt="TTC Logo">
     </div>
-    <div class="menu-list">
-      <span *ngFor="let menu of menuList;let i = index;" [class.menu-button]="i !== 0" [class.selected-menu]="menu.isSelected" class="ttc-pointer" (click)="menuSelected(i)">{{menu.name}}</span>
+    <div class="menu-list" *ngFor="let menu of menuList;let i = index;" [class.menu-button]="i !== 0"
+        [class.selected-menu]="menu.isSelected" (click)="menuSelected(i)">{{menu.name}}
     </div>
     <div class="cart">
       <img src="assets/images/Icon-Cart.png" alt="">
     </div>
   </div>
+</div>

@@ -1,37 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-import { CommunityPartner } from 'src/app/models/communityPartner.model';
 ​
 @Component({
   selector: 'app-enrichment-instructors',
   templateUrl: './enrichment-instructors.page.html',
   styleUrls: ['./enrichment-instructors.page.scss'],
 })
-export class EnrichmentInstructorsPage implements OnInit {
+export class EnrichmentInstructorsPage implements OnInit, AfterViewInit {
 ​
   enrichmentInstructorForm: FormGroup;
-  private formSubmitAttempt: boolean;
   validationMessages = {
     firstName: [
-      { type: 'required', message: 'First Name is required' }
+      { type: 'required', message: 'Please fill in the required field' }
     ],
     lastName: [
-      { type: 'required', message: 'Last Name is required' }
+      { type: 'required', message: 'Please fill in the required field' }
     ],
     email: [
-      { type: 'required', message: 'Email is required' },
+      { type: 'required', message: 'Please fill in the required field' },
       { type: 'pattern', message: 'Enter a valid email' }
     ],
     phone: [
-      { type: 'required', message: 'Enter a valid phone number' },
+      { type: 'required', message: 'Please fill in the required field' },
       { type: 'pattern', message: 'Enter a valid phone number' }
-    ],
-    message: [
-      { type: 'required', message: 'Message is required' }
     ]
   };
 ​
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private elementRef: ElementRef) { }
 ​
   ngOnInit() {
     this.enrichmentInstructorForm = this.formBuilder.group({
@@ -43,12 +38,45 @@ export class EnrichmentInstructorsPage implements OnInit {
       ])),
       phone: new FormControl('', Validators.compose([
         Validators.required,
-        Validators.pattern('^[0-9]{3}[-][0-9]{3}[-][0-9]{4}$') // 456-657-1234(for not this format only is allowed)
+        Validators.pattern('^[0-9]{3}[-][0-9]{3}[-][0-9]{4}$') // 456-657-1234(this format only is allowed)
       ])),
-      linkdin: new FormControl('', null),
-      workexp: new FormControl('', null),
-      opts: new FormControl('', null),
-      message: new FormControl('', Validators.required)
+      linkedIn: new FormControl('', null),
+      workExperience: new FormControl('', null),
+      workAuthorization: new FormControl('', null)
+    });
+  }
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      document.querySelector('.custom-select-wrapper').addEventListener('click', function() {
+        this.querySelector('.custom-select').classList.toggle('open');
+      });
+
+      const dom: HTMLElement = this.elementRef.nativeElement;
+      const elements = dom.querySelectorAll('.custom-option');
+      // tslint:disable-next-line: prefer-for-of
+      for (let i = 0; i < elements.length; i++) {
+        const option = elements[i];
+        option.addEventListener('click', function() {
+            if (!this.classList.contains('selected')) {
+                this.parentNode.querySelector('.custom-option.selected').classList.remove('selected');
+                this.classList.add('selected');
+                this.closest('.custom-select').querySelector('.custom-select__trigger span').textContent = this.textContent;
+            }
+        });
+      }
+
+    }, 2000);
+
+    window.addEventListener('click', (e) => {
+      const dom: HTMLElement = this.elementRef.nativeElement;
+      const elements = dom.querySelectorAll('.custom-select');
+      // tslint:disable-next-line: prefer-for-of
+      for (let i = 0; i < elements.length; i++){
+          if (!elements[i].contains((e as any).target)) {
+            elements[i].classList.remove('open');
+          }
+      }
     });
   }
 ​
