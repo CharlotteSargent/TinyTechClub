@@ -230,6 +230,7 @@ input:focus {
     height: 260.83px;
 
     border-top: 2px solid #FFFFFF;
+    border-bottom: 2px solid #FFFFFF;
 
     font-family: "Poppins Regular";
     font-size: 14px;
@@ -238,10 +239,11 @@ input:focus {
     color: #000000;
 }
 .input-div2{
-    margin-top: 15px !important;
+    margin-top: 12px !important;
     background-color: #FFFFFF;
 }
 .input-div3{
+    margin-top: 40px !important;
     width: 287.23px !important;
 }
 select{
@@ -253,6 +255,39 @@ select:focus{
     outline: none !important;
     border: none !important;
 }
+.submit-button {
+    position: absolute;
+    bottom: 80px;
+    left: 105px;
+
+    font-family: "Poppins Regular";
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    color: #000000;
+    background: var(--ion-color-TTCLime);
+    border-radius: 8px;
+    width: 284px;
+    height: 70px;
+}
+.submit-button:focus {
+    outline: none !important;
+}
+// .submit-button{
+//     font-family: Poppins;
+//     font-style: normal;
+//     font-weight: normal;
+//     font-size: 18px;
+//     line-height: 27px;
+//     text-align: center;
+//     color: #000000;
+//     background: #DAE84D;
+//     border-radius: 8px;
+//     width: 160px;
+//     height: 65px;
+//     margin-top: 40px;
+//     float: left;
+// }
 // ​
 // .form-label-div{
 //     width: 80%;
@@ -349,21 +384,6 @@ select:focus{
 //     line-height: 27px;
 //     color: #FF0000;
 //     text-align: left !important;
-// }
-// .submit-button{
-//     font-family: Poppins;
-//     font-style: normal;
-//     font-weight: normal;
-//     font-size: 18px;
-//     line-height: 27px;
-//     text-align: center;
-//     color: #000000;
-//     background: #DAE84D;
-//     border-radius: 8px;
-//     width: 160px;
-//     height: 65px;
-//     margin-top: 40px;
-//     float: left;
 // }
 
 // .other-button{
