@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-careers',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CareersPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  enrichmentInstructor() {
+    // [routerLink]="['/careers/enrichment-instructors']"
+    this.router.navigateByUrl('/careers/enrichment-instructors');
   }
 
 }

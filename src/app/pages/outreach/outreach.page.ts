@@ -43,7 +43,7 @@ export class OutreachPage implements OnInit {
       ])),
       phone: new FormControl('', Validators.compose([
         Validators.required,
-        Validators.pattern('^[0-9]{3}[-][0-9]{3}[-][0-9]{4}$') // 456-657-1234(for not this format only is allowed)
+        Validators.pattern('^[0-9]{3}[-][0-9]{3}[-][0-9]{4}$') // 456-657-1234(this format only is allowed)
       ])),
       companyWebsite: new FormControl('', null),
       message: new FormControl('', Validators.required)

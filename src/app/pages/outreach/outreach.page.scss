@@ -1,4 +1,3 @@
-@import 'src/theme/font.scss'; 
 .ttc-body {
     position: relative;
     margin-top: 152px;
@@ -228,7 +227,7 @@ input.input-type-text:focus {
     line-height: 27px;
     text-align: center;
     color: #000000;
-    background: #DAE84D;
+    background: var(--ion-color-TTCLime);
     border-radius: 8px;
     width: 160px;
     height: 65px;

@@ -1,277 +1,201 @@
 <ion-content>
-<div id="content">
-  <div class="text">
-    <h1>Enrichment Instructor</h1>
-    ​
-    <div class="TFSpace"></div>
-
-    <h2>Job Descriptions</h2>
-    <p>
-      Teach an average of 2 to 5 classes weekly as per respective Tiny Techs
-      Club curriculum. <br />
-      Each class runs between 1-2 hours long; class size ranges from 10-20
-      students. <br />
-      Facilitate classes and engage students effectively to follow instructions.
-      <br />
-      Assist senior teachers as needed and guide students who need help building
-      robots or animations. <br />
-      Utilize computers with WeDo and SCRATCH software equipment in student
-      instruction. <br />
-      Supervise students waiting to be picked up from school and/or escort
-      students from class to daycare, as needed. <br />
-      Prepare and sort lesson plans, LEGO WeDo kits and laptops, rosters, cards,
-      and handouts before each class. <br />
-      Coordinate with Owner, Office Manager, and coworkers to share, transport,
-      and pick up laptops, kits, and handouts. <br />
-      Maintain accurate attendance records with rosters and report any student
-      absences, noteworthy incidents, and/or damaged or missing LEGO and
-      computer parts to Owner and Office Manager. <br />
-      Abide by and follow respective school rules and policies. <br />
-      Lift up to 30 lbs. of equipment (laptops, kits, etc).
-    </p>
-    ​
-    <div class="TFSpace"></div>
-    ​
-    <h2>Qualifications</h2>
-    <p>
-      The ideal candidate is: <br />
-      Is flexible and available for at least 2 classes during the M-F week (Each
-      class is typically 1-2 hours long and within a 12:30 pm to 5:00 pm
-      timeframe). <br />
-      Likes working with kids. Is energetic, patient, disciplined — is able to
-      teach and handle a class of 10-20 students who are at K-5th grade level.
-      <br />
-      Knows how to use and operate Windows computers. <br />
-      Is responsible, reliable, and never late. <br />
-      Has access to reliable transportation that allows for travel from school
-      to school and can safely transport heavy equipment (ie- WeDo LEGO kits,
-      laptops, etc.). <br />
-      Communicates well with Owner, coworkers, and staff via in-person, phone,
-      text, and email Knowledge of mechanisms (eg- gears, pulleys, levers,
-      motors, etc.), as well as WeDo and SCRATCH software are pluses. <br />
-      Likes working in a fast-paced environment and can handle unexpected
-      circumstances (eg- schedule or equipment changes, etc.). <br />
-      Successfully completes a background check, fingerprint scan, and TB test
-      upon hiring.
-    </p>
-    ​
-    <div class="TFSpace"></div>
-    ​
-    <h2>Locations</h2>
-    <p>
-      We are looking for teachers who can travel to any of the following
-      assigned locations:
-    </p>
-    ​
-    <div class="location">
-      <h3 style="font-weight: bold">California</h3>
-      <ul>
-        <li>Berkeley/Oakland</li>
-        <li>Concord/Walnut Creek</li>
-        <li>San Ramon/Danville</li>
-        <li>San Jose/Los Gatos</li>
-      </ul>
-    </div>
-
-    <div class="HoursSpace"></div>
-    ​
-    <h2>Hours</h2>
-    <p>
-      Paid teacher training takes place at various intervals throughout.
-      <br />
-      Classes take place Monday through Friday. <br />
-      Individual schedule varies. <br />
-      Paid prep time as needed for classes. <br />
-      Job Type: Part-time <br />
-      For further inquiries, feel free to email us at tinytechsjobs@gmail.com
-    </p>
-    ​
-  </div>
-</div>
-<div class="ttc-body">
-  <div class="form-div" style="padding-left:128px;">
-      <div class="cp-form-div">
-          <ion-card style="width: 1184px !important; text-align: center;">
-              <br/><br/><br/><br/>
-              <form [formGroup]="communityPartnerForm" (ngSubmit)="submit()">
-              <div class="form-div-rectangle-text">Apply for this position</div>
-              <br/>
-              <br/> <br/> <br/>
-              <div class="share-text">Your full Linkedin profile will be shared. <u>learn more</u></div>
-              <br/><br/><br/><br/>
-  ​
-              <ion-grid>
-                  <ion-row>
-                      <ion-col>
-                          <button type="button" class="other-button">Apply with Linkedin</button>
-                      </ion-col>
-                      <ion-col>
-                          <button type="button" class="other-button"><img src="assets/images/upload.png" alt="" height="30px" width="30px" > <div class="spantext">Upload Resume</div></button>
-                      </ion-col>
-                      <ion-col></ion-col>
-                      <ion-col></ion-col>
-  ​
-                  </ion-row>
-                  <br/><br/><br/>
-                  <hr class="solid">
-                  <br/><br/>
-                  <ion-row>
-                      <ion-col>
-  ​
-                              <ng-container *ngFor="let validation of validationMessages.firstName">
-                                  <div class="error-message"
-                                      *ngIf="communityPartnerForm.get('firstName').hasError(validation.type) && (communityPartnerForm.get('firstName').dirty || communityPartnerForm.get('firstName').touched)">
-                                      {{ validation.message }}
-                                  </div>
-                              </ng-container>
-  ​
-                      </ion-col>
-                      <ion-col>
-  ​
-                              <ng-container *ngFor="let validation of validationMessages.lastName">
-                                  <div class="error-message"
-                                      *ngIf="communityPartnerForm.get('lastName').hasError(validation.type) && (communityPartnerForm.get('lastName').dirty || communityPartnerForm.get('lastName').touched)">
-                                      {{ validation.message }}
-                                  </div>
-                              </ng-container>
-            
-                      </ion-col>
-                  </ion-row>
-                  <ion-row>
-                      <ion-col>
-                          <div class="form-label-div">
-                              First Name
-                              <span class="required-star">*</span>
-                          </div>
-                      </ion-col>
-                      <ion-col>
-                          <div class="form-label-div">
-                              Last Name
-                              <span class="required-star">*</span>
-                          </div>
-                      </ion-col>
-                  </ion-row>
-                  <ion-row>
-                      <ion-col>
-                          <div class="input-text-field">
-                              <input type="text" formControlName="firstName" class="input-type-text" [ngClass]="{'error-border-class': communityPartnerForm.get('firstName').hasError('required') && (communityPartnerForm.get('firstName').dirty || communityPartnerForm.get('firstName').touched)}">
-                          </div>
-                      </ion-col>
-                      <ion-col>
-                          <div class="input-text-field">
-                              <input type="text" formControlName="lastName" class="input-type-text" [ngClass]="{'error-border-class': communityPartnerForm.get('lastName').hasError('required') && (communityPartnerForm.get('lastName').dirty || communityPartnerForm.get('lastName').touched)}">
-                          </div>
-                      </ion-col>
-                  </ion-row>
-                  <ion-row>
-                      <ion-col>
-                          <ng-container *ngFor="let validation of validationMessages.email">
-                              <div class="error-message"
-                                  *ngIf="communityPartnerForm.get('email').hasError(validation.type) && (communityPartnerForm.get('email').dirty || communityPartnerForm.get('email').touched)">
-                                  {{ validation.message }}
-                              </div>
-                          </ng-container>
-                      </ion-col>
-                      <ion-col>
-                          <ng-container *ngFor="let validation of validationMessages.phone">
-                              <div class="error-message"
-                                  *ngIf="communityPartnerForm.get('phone').hasError(validation.type) && (communityPartnerForm.get('phone').dirty || communityPartnerForm.get('phone').touched)">
-                                  {{ validation.message }}
-                              </div>
-                          </ng-container>
-                      </ion-col>
-                  </ion-row>
-                  <br/><br/>
-                  <ion-row>
-                      <ion-col>
-                          <div class="form-label-div">
-                              Email
-                              <span class="required-star">*</span>
-                          </div>
-                      </ion-col>
-                      <ion-col>
-                          <div class="form-label-div">
-                              Phone
-                              <span class="required-star">*</span>
-                          </div>
-                      </ion-col>
-                  </ion-row>
-                  <ion-row>
-                      <ion-col>
-                          <div class="input-text-field">
-                              <input type="text" formControlName="email" class="input-type-text" [ngClass]="{'error-border-class': (communityPartnerForm.get('email').hasError('required') || communityPartnerForm.get('email').hasError('pattern')) && (communityPartnerForm.get('email').dirty || communityPartnerForm.get('email').touched)}">
-                          </div>
-                      </ion-col>
-                      <ion-col>
-                          <div class="input-text-field">
-                              <input type="text" formControlName="phone" class="input-type-text" [ngClass]="{'error-border-class': (communityPartnerForm.get('phone').hasError('required') || communityPartnerForm.get('phone').hasError('pattern')) && (communityPartnerForm.get('phone').dirty || communityPartnerForm.get('phone').touched)}">
-                          </div>
-                      </ion-col>
-                  </ion-row>
-                  <br/><br/><br/>
-                  <hr class="solid">
-                  <br/><br/><br/>
-                  <ion-row>
-                      <ion-col>
-                          <div class="form-label-div">
-                              Linkedin Profile
-                          </div>
-                      </ion-col>
-                      <ion-col>
-                          <div class="form-label-div">
-                              Portfolio or examples of work
-                          </div>
-                      </ion-col>
-                  </ion-row>
-                  
-                  <ion-row>
-                      <ion-col>
-                          <div class="input-text-field">
-                              <input type="text" formControlName="linkdin" class="input-type-text">
-                          </div>
-                      </ion-col>
-                      <ion-col>
-                          <div class="input-text-field">
-                              <input type="text" formControlName="workexp" class="input-type-text">
-                          </div>
-                      </ion-col>
-                  </ion-row>
-                  <br/><br/><br/>
-                  <ion-row>
-                      <ion-col>
-                          <div class="form-label-div">
-                              Work Authorization
-                          </div>
-                      </ion-col>
-                      <ion-col></ion-col>
-                  </ion-row>
-                  <ion-row>
-                      <ion-col>
-                          <select class="opts" id="country" name="country">
-                              <option value="" disabled selected hidden>Choose An Option</option>
-                              <option value="opt1">Can work for any employer</option>
-                              <option value="opt2">Requires work visa</option>
-                              <option value="opt3">On student visa</option>
-                              <option value="opt4">Not specified</option>
-                          </select>
-                      </ion-col>
-                      <ion-col>
-  ​
-                      </ion-col>
-                  </ion-row>
-                  <br/><br/><br/>
-                  <hr class="solid">
-                  <ion-row>
-                      <ion-col><button type="submit" class="submit-button">Submit</button></ion-col>
-                      <ion-col></ion-col>
-                  </ion-row>
-                  <br/><br/><br/>
-              </ion-grid>
-          </form>
-          </ion-card>
+    <div id="content">
+      <div class="text">
+        <h1>Enrichment Instructor</h1>
+        ​
+        <h2 class="eiHeader job-description">Job Descriptions</h2>
+        <p class="eiParagraph job-descriptionParagraph">
+          Teach an average of 2 to 5 classes weekly as per respective Tiny Techs
+          Club curriculum. <br />
+          Each class runs between 1-2 hours long; class size ranges from 10-20
+          students. <br />
+          Facilitate classes and engage students effectively to follow instructions.
+          <br />
+          Assist senior teachers as needed and guide students who need help building
+          robots or animations. <br />
+          Utilize computers with WeDo and SCRATCH software equipment in student
+          instruction. <br />
+          Supervise students waiting to be picked up from school and/or escort
+          students from class to daycare, as needed. <br />
+          Prepare and sort lesson plans, LEGO WeDo kits and laptops, rosters, cards,
+          and handouts before each class. <br />
+          Coordinate with Owner, Office Manager, and coworkers to share, transport,
+          and pick up laptops, kits, and handouts. <br />
+          Maintain accurate attendance records with rosters and report any student
+          absences, noteworthy incidents, and/or damaged or missing LEGO and
+          computer parts to Owner and Office Manager. <br />
+          Abide by and follow respective school rules and policies. <br />
+          Lift up to 30 lbs. of equipment (laptops, kits, etc).
+        </p>
+        ​
+        <h2 class="eiHeader qualificationsH2">Qualifications</h2>
+        <p class="eiParagraph qualificationsParagraph">
+          The ideal candidate is: <br />
+          Is flexible and available for at least 2 classes during the M-F week (Each
+          class is typically 1-2 hours long and within a 12:30 pm to 5:00 pm
+          timeframe). <br />
+          Likes working with kids. Is energetic, patient, disciplined — is able to
+          teach and handle a class of 10-20 students who are at K-5th grade level.
+          <br />
+          Knows how to use and operate Windows computers. <br />
+          Is responsible, reliable, and never late. <br />
+          Has access to reliable transportation that allows for travel from school
+          to school and can safely transport heavy equipment (ie- WeDo LEGO kits,
+          laptops, etc.). <br />
+          Communicates well with Owner, coworkers, and staff via in-person, phone,
+          text, and email Knowledge of mechanisms (eg- gears, pulleys, levers,
+          motors, etc.), as well as WeDo and SCRATCH software are pluses. <br />
+          Likes working in a fast-paced environment and can handle unexpected
+          circumstances (eg- schedule or equipment changes, etc.). <br />
+          Successfully completes a background check, fingerprint scan, and TB test
+          upon hiring.
+        </p>
+        ​
+        ​
+        <h2 class="eiHeader locationsH2">Locations</h2>
+        <p class="eiParagraph locationsParagraph">
+          We are looking for teachers who can travel to any of the following
+          assigned locations:
+        </p>
+        ​
+        
+        <h3 class="list-header">California</h3>
+        <ul class="eiParagraph list-ul">
+          <li>Berkeley/Oakland</li>
+          <li>Concord/Walnut Creek</li>
+          <li>San Ramon/Danville</li>
+          <li>San Jose/Los Gatos</li>
+        </ul>
+            ​
+        <h2 class="hoursH2">Hours</h2>
+        <p class="eiParagraph hoursParagraph">
+          Paid teacher training takes place at various intervals throughout.
+          <br />
+          Classes take place Monday through Friday. <br />
+          Individual schedule varies. <br />
+          Paid prep time as needed for classes. <br />
+          Job Type: Part-time <br />
+          For further inquiries, feel free to email us at tinytechsjobs@gmail.com
+        </p>
+        ​
       </div>
-  </div>
-  </div>
-  
-<app-footer></app-footer>
-</ion-content>
+      <div class="form-div">
+        
+        <div class="form-div-rectangle-text">Apply for this position</div>
+        <div class="share-text">Your full LinkedIn profile will be shared. <u>Learn More</u></div>
+        <div class="buttons-div">
+            <p class="button-text">Apply with LinkedIn</p>
+        </div>
+        <div class="ur-buttons-div">
+            <img src="assets/images/upload.png" class="upload-img">
+            <p class="ur-button-text">Upload Resume</p>
+        </div>
+        <form [formGroup]="enrichmentInstructorForm" (ngSubmit)="submit()">
+            <div class="form-div-1">
+                <div class="form-div-1-inner">
+                    <div class="form-div-1-inner-body1">
+                        <div class="group-107">
+                            <div class="label-div">
+                                <p>First Name <span class="required-star">*</span>
+                                    <ng-container *ngFor="let validation of validationMessages.firstName">
+                                        <span class="error-message" *ngIf="enrichmentInstructorForm.get('firstName').hasError(validation.type) && (enrichmentInstructorForm.get('firstName').dirty || enrichmentInstructorForm.get('firstName').touched)">{{ validation.message }}</span>
+                                    </ng-container>
+                                </p>
+                            </div>
+                            <div class="input-div">
+                                <input type="text" formControlName="firstName" class="input" [ngClass]="{'error-border-class': enrichmentInstructorForm.get('firstName').hasError('required') && (enrichmentInstructorForm.get('firstName').dirty || enrichmentInstructorForm.get('firstName').touched)}">
+                            </div>
+                        </div>
+                        <div class="group-106">
+                            <div class="label-div">
+                                <p>Last Name <span class="required-star">*</span>
+                                    <ng-container *ngFor="let validation of validationMessages.lastName">
+                                        <span class="error-message" *ngIf="enrichmentInstructorForm.get('lastName').hasError(validation.type) && (enrichmentInstructorForm.get('lastName').dirty || enrichmentInstructorForm.get('lastName').touched)">{{ validation.message }}</span>
+                                    </ng-container>
+                                </p>
+                            </div>
+                            <div class="input-div">
+                                <input type="text" class="input" formControlName="lastName" [ngClass]="{'error-border-class': enrichmentInstructorForm.get('lastName').hasError('required') && (enrichmentInstructorForm.get('lastName').dirty || enrichmentInstructorForm.get('lastName').touched)}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-div-1-inner-body2">
+                        <div class="group-107">
+                            <div class="label-div">
+                                <p>Email <span class="required-star">*</span>
+                                    <ng-container *ngFor="let validation of validationMessages.email">
+                                        <span class="error-message" *ngIf="enrichmentInstructorForm.get('email').hasError(validation.type) && (enrichmentInstructorForm.get('email').dirty || enrichmentInstructorForm.get('email').touched)">{{ validation.message }}</span>
+                                    </ng-container>
+                                </p>
+                            </div>
+                            <div class="input-div">
+                                <input type="text" class="input" formControlName="email" [ngClass]="{'error-border-class': (enrichmentInstructorForm.get('email').hasError('required') || enrichmentInstructorForm.get('email').hasError('pattern')) && (enrichmentInstructorForm.get('email').dirty || enrichmentInstructorForm.get('email').touched)}">
+                            </div>
+                        </div>
+                        <div class="group-106">
+                            <div class="label-div">
+                                <p>Phone <span class="required-star">*</span>
+                                    <ng-container *ngFor="let validation of validationMessages.phone">
+                                        <span class="error-message" *ngIf="enrichmentInstructorForm.get('phone').hasError(validation.type) && (enrichmentInstructorForm.get('phone').dirty || enrichmentInstructorForm.get('phone').touched)">{{ validation.message }}</span>
+                                    </ng-container>
+                                </p>
+                            </div>
+                            <div class="input-div">
+                                <input type="text" class="input" formControlName="phone" [ngClass]="{'error-border-class': (enrichmentInstructorForm.get('phone').hasError('required') || enrichmentInstructorForm.get('phone').hasError('pattern')) && (enrichmentInstructorForm.get('phone').dirty || enrichmentInstructorForm.get('phone').touched)}">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="form-div-2">
+                <div class="form-div-1-inner">
+                    <div class="form-div-1-inner-body1">
+                        <div class="group-107">
+                            <div class="label-div">
+                                <p>LinkedIn Profile</p>
+                            </div>
+                            <div class="input-div input-div2">
+                                <input type="text" class="input" formControlName="linkedIn">
+                            </div>
+                        </div>
+                        <div class="group-106">
+                            <div class="label-div">
+                                <p>Portfolio or examples of work</p>
+                            </div>
+                            <div class="input-div input-div2">
+                                <input type="text" class="input" formControlName="workExperience">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-div-1-inner-body2 input-div3">
+                        <div class="group-107">
+                            <div class="label-div">
+                                <p>Work Authorization</p>
+                            </div>
+                                <div class="custom-select-wrapper">
+                                    <div class="custom-select">
+                                        <div class="custom-select__trigger"><span>Please select</span>
+                                            <div class="arrow"><ion-icon name="chevron-down-outline"></ion-icon></div>
+                                            <!-- <div class="arrow"></div> -->
+                                        </div>
+                                        <div class="custom-options">
+                                            <span class="custom-option selected" data-value="cwae"><span class="options">Can work for any employer</span></span>
+                                            <span class="custom-option" data-value="rwv"><span class="options">Requires work visa</span></span>
+                                            <span class="custom-option" data-value="osv"><span class="options">On student visa</span></span>
+                                            <span class="custom-option" data-value="ns"><span class="options">Not specified</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <button type="submit" class="submit-button">Submit</button>
+        </form>    
+      </div>
+    </div>
+    <app-footer></app-footer>
+    </ion-content>
