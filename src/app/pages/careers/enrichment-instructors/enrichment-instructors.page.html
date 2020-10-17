@@ -67,7 +67,7 @@
           <li>San Jose/Los Gatos</li>
         </ul>
             ​
-        <h2 class="hoursH2">Hours</h2>
+        <h2 class="eiHeader hoursH2">Hours</h2>
         <p class="eiParagraph hoursParagraph">
           Paid teacher training takes place at various intervals throughout.
           <br />
@@ -83,10 +83,10 @@
         
         <div class="form-div-rectangle-text">Apply for this position</div>
         <div class="share-text">Your full LinkedIn profile will be shared. <u>Learn More</u></div>
-        <div class="buttons-div">
+        <div class="buttons-div" [ngClass]="LinkedInClicked ? 'linkedIn-clicked' : 'LinkedIn' " (click)="LinkedInClickedAction()">
             <p class="button-text">Apply with LinkedIn</p>
         </div>
-        <div class="ur-buttons-div">
+        <div class="ur-buttons-div" [ngClass]="UploadClicked ? 'upload-clicked' : 'Upload' " (click)="UploadClickedAction()">
             <img src="assets/images/upload.png" class="upload-img">
             <p class="ur-button-text">Upload Resume</p>
         </div>

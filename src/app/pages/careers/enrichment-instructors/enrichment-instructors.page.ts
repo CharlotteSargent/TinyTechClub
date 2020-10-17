@@ -25,7 +25,10 @@ export class EnrichmentInstructorsPage implements OnInit, AfterViewInit {
       { type: 'pattern', message: 'Enter a valid phone number' }
     ]
   };
-​
+​  
+  LinkedInClicked = false;
+  UploadClicked = false;
+
   constructor(private formBuilder: FormBuilder, private elementRef: ElementRef) { }
 ​
   ngOnInit() {
@@ -89,6 +92,19 @@ export class EnrichmentInstructorsPage implements OnInit, AfterViewInit {
         this.validateAllFormFields(control);
       }
     });
+  }
+
+  async LinkedInClickedAction() {
+    this.LinkedInClicked = true;
+    // setTimeout(this.LinkedInFix, 1000);
+    await new Promise(resolve => setTimeout(resolve, 100));
+    this.LinkedInClicked = false;
+  }
+
+  async UploadClickedAction() {
+    this.UploadClicked = true;
+    await new Promise(resolve => setTimeout(resolve, 100));
+    this.UploadClicked = false;
   }
 ​
   submit() {

@@ -24,7 +24,6 @@
     font-family: "Poppins Bold";
     font-size: 24px;
     line-height: 36px;
-
     color: #000000;
 }
 .job-description {
@@ -118,7 +117,6 @@ ul li::before {
 .buttons-div{
     position: absolute;
     margin: 194.48px 0px 0px 104.67px;
-
     width: 320.53px;
     height: 60.52px;
     background-color: var(--ion-color-TTCLime);
@@ -135,7 +133,6 @@ ul li::before {
 .ur-buttons-div{
     position: absolute;
     margin: 194.48px 0px 0px 475.31px;
-
     width: 320.53px;
     height: 60.52px;
     background-color: var(--ion-color-TTCLime);
@@ -146,12 +143,28 @@ ul li::before {
 .ur-button-text{
     position: absolute;
     left: 110px;
-
     font-family: "Poppins Regular";
     font-size: 18px;
     line-height: 27px;
     color: #000000;
 }
+
+.LinkedIn{
+    background-color: var(--ion-color-TTCLime);
+}
+
+.Upload{
+    background-color: var(--ion-color-TTCLime);
+}
+
+.linkedIn-clicked{
+    background-color: var(--ion-color-TTCLimeClick);
+}
+
+.upload-clicked{
+    background-color: var(--ion-color-TTCLimeClick);
+}
+
 .upload-img{
     position: absolute;
 
