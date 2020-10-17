@@ -1,13 +1,14 @@
 <div class="menu">
-  <div class="menu-content">
+   <div class="menu-content">
     <div class="logo">
-      <img src="assets/images/Logo.png" alt="TTC Logo">
+      <ion-icon src="assets/images/ttc-logo.svg" id="logo-icon"></ion-icon>
     </div>
-    <div class="menu-list" *ngFor="let menu of menuList;let i = index;" [class.menu-button]="i !== 0"
+   
+    <div class="menu-list ion-text-nowrap" *ngFor="let menu of menuList;let i = index;" [class.menu-button]="i !== 0"
         [class.selected-menu]="menu.isSelected" (click)="menuSelected(i)">{{menu.name}}
     </div>
     <div class="cart">
-      <img src="assets/images/Icon-Cart.png" alt="">
+      <ion-icon src="assets/images/cart.svg" id="cart-icon"></ion-icon>
     </div>
-  </div>
+  </div> 
 </div>
