@@ -30,6 +30,10 @@ const routes: Routes = [
   {
     path: 'events',
     loadChildren: () => import('./pages/careers/careers.module').then( m => m.CareersPageModule)
+  },
+  {
+    path: 'stem-socials',
+    loadChildren: () => import('./pages/stem-socials/stem-socials.module').then( m => m.StemSocialsPageModule)
   }
 ];
 

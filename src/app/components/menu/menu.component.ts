@@ -39,8 +39,8 @@ export class MenuComponent implements OnInit {
     };
     this.menuList.push(menu);
     menu = {
-      name: 'Events',
-      path: 'events',
+      name: 'Stem Socials',
+      path: 'stem-socials',
       isSelected: false
     };
     this.menuList.push(menu);
