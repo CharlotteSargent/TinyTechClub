@@ -8,16 +8,9 @@
     justify-content: center;
     cursor: pointer;
 }
-.header-clicked {
-    height: 50px;
-    width: 100%;
+.header:hover{
     background-color: var(--ion-color-TTCLimeClick);
-    position: fixed;
-    z-index: 10;
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-}
+ }
 .header-title{
     position: absolute;
     top: 32%;

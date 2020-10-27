@@ -13,12 +13,4 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {}
 
-  mousedown() {
-    this.headerClicked = true;
-  }
-
-  mouseup() {
-    this.headerClicked = false;
-  }
-
 }
