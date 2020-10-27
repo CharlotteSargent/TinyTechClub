@@ -26,6 +26,8 @@ export class EnrichmentInstructorsPage implements OnInit, AfterViewInit {
     ]
   };
 ​
+  applyButtonClicked: boolean;
+  urButtonClicked: boolean;
   constructor(private formBuilder: FormBuilder, private elementRef: ElementRef) { }
 ​
   ngOnInit() {
@@ -89,6 +91,22 @@ export class EnrichmentInstructorsPage implements OnInit, AfterViewInit {
         this.validateAllFormFields(control);
       }
     });
+  }
+
+  mousedownApply() {
+    this.applyButtonClicked = true;
+  }
+
+  mouseupApply() {
+    this.applyButtonClicked = false;
+  }
+
+  mousedownUR() {
+    this.urButtonClicked = true;
+  }
+
+  mouseupUR() {
+    this.urButtonClicked = false;
   }
 ​
   submit() {
