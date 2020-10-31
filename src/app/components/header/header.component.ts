@@ -13,10 +13,4 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {}
 
-  async headerClickedAction() {
-    this.headerClicked = true;
-    await new Promise(resolve => setTimeout(resolve, 100));
-    this.headerClicked = false;
-  }
-
 }
