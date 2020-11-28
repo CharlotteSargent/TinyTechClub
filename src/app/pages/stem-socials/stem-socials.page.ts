@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stem-socials.page.scss'],
 })
 export class StemSocialsPage implements OnInit {
+  ishidden = false;
+  pastishidden = true;
   events: any[] = [
     {
       eventTitle: "First Event",
@@ -68,9 +70,15 @@ export class StemSocialsPage implements OnInit {
     },
   ];
   
-  // segmentChanged(ev: any) {
-  //   console.log('Segment changed', ev);
-  // }
+  segmentChanged() {
+    if(this.ishidden == false){
+      this.ishidden = true;
+      this.pastishidden = false;
+    }else{
+      this.ishidden = false;
+      this.pastishidden = true;
+    }
+  }
 
   constructor() { }
 

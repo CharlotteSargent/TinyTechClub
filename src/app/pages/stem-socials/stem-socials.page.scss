@@ -59,20 +59,21 @@
 
 ​
 // Current Events
+.float-container {
+    padding: 10px;
+}
+
 .event {
     width: 100%;
     min-height: 448px;
     display: flex;
     margin-bottom: 30px;
+    flex-direction: row;
 }
-.event .checkbox-area {
-    // height: 100%;
-    flex: 1;
-    background-color: #E3BA2D;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+// .event .checkbox-area {
+//     // height: 100%;
+    
+// }
 .event .checkbox {
     background: #FFFFFF;
     width: 33px;

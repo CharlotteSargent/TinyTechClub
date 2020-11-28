@@ -34,6 +34,10 @@ const routes: Routes = [
   {
     path: 'stem-socials',
     loadChildren: () => import('./pages/stem-socials/stem-socials.module').then( m => m.StemSocialsPageModule)
+  },
+  {
+    path: 'stem-social-confirmation',
+    loadChildren: () => import('./stem-social-confirmation/stem-social-confirmation.module').then( m => m.StemSocialConfirmationPageModule)
   }
 ];
 

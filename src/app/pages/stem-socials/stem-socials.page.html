@@ -6,7 +6,9 @@
       alt="Header Image"
     />
     <div class="stem-socials-header-rectangle">
-      <div class="stem-socials-header-rectangle-text">Let's Talk Tech & Education</div>
+      <div class="stem-socials-header-rectangle-text">
+        Let's Talk Tech & Education
+      </div>
     </div>
     <div class="stem-socials-header-body">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus velit
@@ -14,29 +16,32 @@
       eget mauris nibh odio ullamcorper. Ac ultricies diam urna, aliquet
       integer.
     </div>
-  </div>  ​
-​
+  </div>
+  ​ ​
 
-<!-- <ion-segment (ionChange)="segmentChanged($event)" value="current">
-  <ion-segment-button value="current">
-    <ion-label>Upcoming Events</ion-label>
-  </ion-segment-button>
-  <ion-segment-button value="previous">
-    <ion-label>Past Events</ion-label>
-  </ion-segment-button>
-</ion-segment> -->
-
-<!-- use radios maybe?? -->
+  <ion-segment (ionChange)="segmentChanged()" value="upcoming">
+    <ion-segment-button id="up" value="upcoming">
+      <ion-label>Upcoming Events</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="previous">
+      <ion-label>Past Events</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <div [hidden] = ishidden class="float-container">
   <div *ngFor="let event of events" class="event">
-    <div class="checkbox-area">
+    <div class="checkbox-area" style="flex: 1;
+    background-color: #E3BA2D;
+    display: flex;
+    justify-content: center;
+    align-items: center;">
       <div class="checkbox">
-        <img class="checkmark" src="assets/images/Vector.png" alt="Checkmark">
+        <img class="checkmark" src="assets/images/Vector.png" alt="Checkmark" />
       </div>
     </div>
     <div class="body">
       <div class="calendar-div">
         <div class="calender">
-          <img src="assets/images/calendar.png" alt="calender Image">
+          <img src="assets/images/calendar.png" alt="calender Image" />
           <p class="month">{{event.eventMonth}}</p>
           <p class="date">{{event.eventDate}}</p>
           <p class="day">{{event.eventDay}}</p>
@@ -45,43 +50,38 @@
       <div class="text">
         <h2>{{event.eventTitle}}</h2>
         <h4>{{event.eventTime}} | {{event.eventLocation}}</h4>
-        <p>
-          {{event.eventDescription}}
-        </p>
+        <p>{{event.eventDescription}}</p>
       </div>
     </div>
   </div>
- <!-- Space -->
- <div style="height: 200px;"></div>
- ​
- ​
-   <!-- Past Events -->
-   <div id="pastEvents">
- ​
-     <div *ngFor="let event of pastEvents" class="pastEvent">
-       <div class="body">
-         <div class="calendar-div">
-           <div class="calender">
-             <img src="assets/images/old-calendar.png" alt="calender Image">
-             <p class="month">{{event.eventMonth}}</p>
-             <p class="date">{{event.eventDate}}</p>
-             <p class="day">{{event.eventDay}}</p>
-           </div>
-         </div>
-         <div class="text">
-           <h2>{{event.eventTitle}}</h2>
-           <h4>{{event.eventTime}} | {{event.eventLocation}}</h4>
-           <p>
-             {{event.eventDescription}}
-           </p>
-         </div>
-       </div>
-     </div>
- ​
-   </div>
- ​
-   <!-- Space -->
-   <div style="height: 200px;"></div>
+  </div>
+​
+  <!-- Past Events -->
 
-<app-footer></app-footer>
+  <div id="pastEvents" [hidden]=pastishidden>
+    ​
+    <div *ngFor="let event of pastEvents" class="pastEvent">
+      <div class="body">
+        <div class="calendar-div">
+          <div class="calender">
+            <img src="assets/images/old-calendar.png" alt="calender Image" />
+            <p class="month">{{event.eventMonth}}</p>
+            <p class="date">{{event.eventDate}}</p>
+            <p class="day">{{event.eventDay}}</p>
+          </div>
+        </div>
+        <div class="text">
+          <h2>{{event.eventTitle}}</h2>
+          <h4>{{event.eventTime}} | {{event.eventLocation}}</h4>
+          <p>{{event.eventDescription}}</p>
+        </div>
+      </div>
+    </div>
+    ​
+  </div>
+  ​
+  <!-- Space -->
+  <div style="height: 200px"></div>
+
+  <app-footer></app-footer>
 </div>
