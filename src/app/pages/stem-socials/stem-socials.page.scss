@@ -7,12 +7,14 @@
 }
 
 .stem-socials-img-div{
-    height: 505px;
+    // height: 505px;
     width: 100%;
+    position: relative;
+
 }
 .stem-socials-img{
     width: 100%;
-    min-height: 100%;
+    // min-height: 100%;
 }
 
 .stem-socials-div{
@@ -23,12 +25,24 @@
     top: calc(50% - 176px/2 - 0.5px);
     background-color: red;
 }
+
+.stem-socials-header-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 700px;
+    height: 200px;
+}
+
+
 .stem-socials-header-rectangle{
     position: absolute;
     width: 509px;
     height: 40px;
     left: calc(50% - 509px/2 + 1px);
-    top: 181px;
+    // top: 181px;
     background: var(--ion-color-TTCLime);
     border-radius: 4px;
 }
@@ -46,7 +60,8 @@
     position: absolute;
     width: 711px;
     height: 176px;
-    top: 240px;
+    // top: 240px;
+    top: 59px;
     left: 0; 
     right: 0; 
     margin-left: auto; 
