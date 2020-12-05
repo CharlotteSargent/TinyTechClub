@@ -5,28 +5,31 @@
       src="assets/images/stem-socials-page-header.jpg"
       alt="Header Image"
     />
-    <div class="stem-socials-header-rectangle">
-      <div class="stem-socials-header-rectangle-text">
-        Let's Talk Tech & Education
+    <div class="stem-socials-header-container">
+      <div class="stem-socials-header-rectangle">
+        <div class="stem-socials-header-rectangle-text">
+          Let's Talk Tech & Education
+        </div>
       </div>
-    </div>
-    <div class="stem-socials-header-body">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus velit
-      adipiscing duis suspendisse sit purus. Faucibus sodales libero integer
-      eget mauris nibh odio ullamcorper. Ac ultricies diam urna, aliquet
-      integer.
+      <div class="stem-socials-header-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus velit
+        adipiscing duis suspendisse sit purus. Faucibus sodales libero integer
+        eget mauris nibh odio ullamcorper. Ac ultricies diam urna, aliquet
+        integer.
+      </div>
     </div>
   </div>
   ​ ​
 
-  <ion-segment (ionChange)="segmentChanged()" value="upcoming">
-    <ion-segment-button id="up" value="upcoming">
+  <ion-segment class="segment" (ionChange)="segmentChanged()" value="upcoming">
+    <ion-segment-button class="up" value="upcoming">
       <ion-label>Upcoming Events</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="previous">
+    <ion-segment-button class="pa" value="previous">
       <ion-label>Past Events</ion-label>
     </ion-segment-button>
   </ion-segment>
+  
   <div [hidden] = ishidden class="float-container">
   <div *ngFor="let event of events" class="event">
     <div class="checkbox-area" style="flex: 1;
@@ -58,8 +61,7 @@
 ​
   <!-- Past Events -->
 
-  <div id="pastEvents" [hidden]=pastishidden>
-    ​
+  <div id="pastEvents" [hidden]=pastishidden class="float-container">
     <div *ngFor="let event of pastEvents" class="pastEvent">
       <div class="body">
         <div class="calendar-div">
