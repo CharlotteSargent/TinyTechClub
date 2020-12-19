@@ -20,6 +20,156 @@
     </div>
   </div>
   ​ ​
+  <div class="form-div">
+    <div class="cp-form-div">
+      <ion-card style="width: 1184px !important; text-align: center">
+        <br /><br /><br /><br />
+        <form [formGroup]="communityPartnerForm" (ngSubmit)="submit()">
+          ​ ​
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                ​
+                <ng-container
+                  *ngFor="let validation of validationMessages.firstName"
+                >
+                  <div
+                    class="error-message"
+                    *ngIf="communityPartnerForm.get('firstName').hasError(validation.type) && (communityPartnerForm.get('firstName').dirty || communityPartnerForm.get('firstName').touched)"
+                  >
+                    {{ validation.message }}
+                  </div>
+                </ng-container>
+                ​
+              </ion-col>
+              <ion-col>
+                ​
+                <ng-container
+                  *ngFor="let validation of validationMessages.lastName"
+                >
+                  <div
+                    class="error-message"
+                    *ngIf="communityPartnerForm.get('lastName').hasError(validation.type) && (communityPartnerForm.get('lastName').dirty || communityPartnerForm.get('lastName').touched)"
+                  >
+                    {{ validation.message }}
+                  </div>
+                </ng-container>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <div class="form-label-div">
+                  First Name
+                  <span class="required-star">*</span>
+                </div>
+              </ion-col>
+              <ion-col>
+                <div class="form-label-div">
+                  Last Name
+                  <span class="required-star">*</span>
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <div class="input-text-field">
+                  <input
+                    type="text"
+                    formControlName="firstName"
+                    class="input-type-text"
+                    [ngClass]="{'error-border-class': communityPartnerForm.get('firstName').hasError('required') && (communityPartnerForm.get('firstName').dirty || communityPartnerForm.get('firstName').touched)}"
+                  />
+                </div>
+              </ion-col>
+              <ion-col>
+                <div class="input-text-field">
+                  <input
+                    type="text"
+                    formControlName="lastName"
+                    class="input-type-text"
+                    [ngClass]="{'error-border-class': communityPartnerForm.get('lastName').hasError('required') && (communityPartnerForm.get('lastName').dirty || communityPartnerForm.get('lastName').touched)}"
+                  />
+                </div>
+              </ion-col>
+            </ion-row>
+            <br /><br />
+            <ion-row>
+              <ion-col>
+                <ng-container
+                  *ngFor="let validation of validationMessages.email"
+                >
+                  <div
+                    class="error-message"
+                    *ngIf="communityPartnerForm.get('email').hasError(validation.type) && (communityPartnerForm.get('email').dirty || communityPartnerForm.get('email').touched)"
+                  >
+                    {{ validation.message }}
+                  </div>
+                </ng-container>
+              </ion-col>
+              <ion-col> </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col>
+                <div class="form-label-div">
+                  Email
+                  <span class="required-star">*</span>
+                </div>
+              </ion-col>
+              <ion-col> </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <div class="input-text-field">
+                  <input
+                    type="text"
+                    formControlName="email"
+                    class="input-type-text"
+                    [ngClass]="{'error-border-class': (communityPartnerForm.get('email').hasError('required') || communityPartnerForm.get('email').hasError('pattern')) && (communityPartnerForm.get('email').dirty || communityPartnerForm.get('email').touched)}"
+                  />
+                </div>
+              </ion-col>
+              <ion-col> </ion-col>
+            </ion-row>
+            <br /><br />
+            <ion-row>
+              ​
+              <ion-col>
+                <div class="form-label-div">What are you excited to learn?</div>
+              </ion-col>
+              <ion-col></ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                ​
+                <textarea
+                  type="text"
+                  formControlName="textbox"
+                  class="textarea-form"
+                ></textarea>
+                ​
+              </ion-col>
+              <ion-col></ion-col>
+            </ion-row>
+            <br /><br /><br />
+            <ion-row>
+              <ion-col></ion-col>
+              <ion-col
+                ><button
+                  type="submit"
+                  class="submit-button"
+                  style="margin-left: 60%"
+                >
+                  Submit
+                </button></ion-col
+              >
+            </ion-row>
+            <br /><br /><br />
+          </ion-grid>
+        </form>
+      </ion-card>
+    </div>
+  </div>
 
   <ion-segment class="segment" (ionChange)="segmentChanged()" value="upcoming">
     <ion-segment-button class="up" value="upcoming">
@@ -29,39 +179,48 @@
       <ion-label>Past Events</ion-label>
     </ion-segment-button>
   </ion-segment>
-  
-  <div [hidden] = ishidden class="float-container">
-  <div *ngFor="let event of events" class="event">
-    <div class="checkbox-area" style="flex: 1;
-    background-color: #E3BA2D;
-    display: flex;
-    justify-content: center;
-    align-items: center;">
-      <div class="checkbox">
-        <img class="checkmark" src="assets/images/Vector.png" alt="Checkmark" />
-      </div>
-    </div>
-    <div class="body">
-      <div class="calendar-div">
-        <div class="calender">
-          <img src="assets/images/calendar.png" alt="calender Image" />
-          <p class="month">{{event.eventMonth}}</p>
-          <p class="date">{{event.eventDate}}</p>
-          <p class="day">{{event.eventDay}}</p>
+
+  <div [hidden]="ishidden" class="float-container">
+    <div *ngFor="let event of events" class="event">
+      <div
+        class="checkbox-area"
+        style="
+          flex: 1;
+          background-color: #e3ba2d;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <div class="checkbox">
+          <img
+            class="checkmark"
+            src="assets/images/Vector.png"
+            alt="Checkmark"
+          />
         </div>
       </div>
-      <div class="text">
-        <h2>{{event.eventTitle}}</h2>
-        <h4>{{event.eventTime}} | {{event.eventLocation}}</h4>
-        <p>{{event.eventDescription}}</p>
+      <div class="body">
+        <div class="calendar-div">
+          <div class="calender">
+            <img src="assets/images/calendar.png" alt="calender Image" />
+            <p class="month">{{event.eventMonth}}</p>
+            <p class="date">{{event.eventDate}}</p>
+            <p class="day">{{event.eventDay}}</p>
+          </div>
+        </div>
+        <div class="text">
+          <h2>{{event.eventTitle}}</h2>
+          <h4>{{event.eventTime}} | {{event.eventLocation}}</h4>
+          <p>{{event.eventDescription}}</p>
+        </div>
       </div>
     </div>
   </div>
-  </div>
-​
+  ​
   <!-- Past Events -->
 
-  <div id="pastEvents" [hidden]=pastishidden class="float-container">
+  <div id="pastEvents" [hidden]="pastishidden" class="float-container">
     <div *ngFor="let event of pastEvents" class="pastEvent">
       <div class="body">
         <div class="calendar-div">
