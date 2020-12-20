@@ -1,67 +1,93 @@
 .ttc-footer {
-    position: relative;
-    width: 1440px;
-    height: 235.15px;
+    min-height: 240px;
     background-color: var(--ion-color-TTCGray2);
 }
-.content{
-    position: absolute;
-    left: 9.31%;
-    right: 10%;
-    width: 80.69%;
-    height: 150;
+​
+.cols {
     display: flex;
-    flex-direction: row;
+    padding: 30px;
 }
-.tnc-div{
-    width: 254px;
-    height: 100%;
-    margin-top: 38px;
+​
+.tncCol {
+    padding-left: 30px;
+    flex: 200px;
+    min-width: 170px;
 }
-.footer-text{
-    font-family: "Poppins Regular";
-    font-size: 14px;
-    line-height: 21px;
-    color: #F2F2F2;
-    cursor: pointer;
+​
+.aboutCol {
+    flex: calc(100% - 450px);
+    margin-left: 50px;
+    min-width: 65px;
 }
-.footer-text-margin{
-    margin-top: 16px;
+​
+.socialsCol {
+    flex: 200px;
+    min-width: 158px;
 }
-.aboutUs-div{
-    position: relative;
-    width: 254px;
-    height: 100%;
-    margin-top: 38px;
+​
+@media(max-width: 675px){
+    .tncCol{
+        flex: 1;
+    }
+    .aboutCol {
+        flex: 1;
+        margin-left: 0;
+    }
+    .aboutCol a {
+        margin-left: calc(50% - 31px);
+    }
+​
+    .socialsCol {
+        flex: 1;
+    }
 }
-.copyright{
-    position: absolute;
-    left: 9.38%;
-    right: 70.67%;
-    top: 76%;
-    font-family: "Poppins Regular";
-    font-size: 10px;
-    line-height: 15px;
-    color: #F2F2F2;
+​
+@media (max-width: 475px){
+    .cols {
+        flex-direction: column;
+    }
+​
+    .aboutCol {
+        margin-top: 20px;
+    }
+    .socialsCol {
+        margin-top: 30px;
+    }
+​
+    .aboutCol a {
+        margin-left: 30px;
+    }
+​
+    .ttc-footer {
+        height: 350px;
+    }
 }
-.logo-div{
-    position: absolute;
-    right: 8.61%;
-    width: 254px;
-    height: 112px;
-    margin-top: 38px;
-    display: flex;
-    justify-content: flex-end;
-}
+​
 .logo-img-div{
     width: 38px;
     height: 38px;
+    display: inline-block;
 }
+​
 .logo-img{
     width: 100%;
     height: 100%;
     cursor: pointer;
 }
-.logo-img-margin{
-    margin-right: 18px;
+​
+a {
+    font-family: "Poppins Regular";
+    font-size: 14px;
+    line-height: 21px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+​
+.copyright {
+    font-family: "Poppins Regular";
+    font-size: 10px;
+    line-height: 15px;
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-left: 55px;
 }
