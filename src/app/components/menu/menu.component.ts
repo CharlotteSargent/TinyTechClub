@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Menu } from 'src/app/models/menu.model';
 import { Router } from '@angular/router';
 
@@ -64,6 +64,17 @@ export class MenuComponent implements OnInit {
     this.menuList.forEach(d => d.isSelected = false);
     this.menuList[index].isSelected = true;
     this.router.navigateByUrl(this.menuList[index].path);
+  }
+
+
+  @ViewChild('menu') menu:ElementRef;
+  showMenu() {
+    console.log("test");
+    if(this.menu.nativeElement.style.display == "flex") {
+      this.menu.nativeElement.style.display = 'none';
+    } else {
+      this.menu.nativeElement.style.display = 'flex';
+    }
   }
 
 }
